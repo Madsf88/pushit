@@ -23,6 +23,7 @@
     "homebrew": "^0.1.0",
     "react": "16.3.1",
     "react-native": "~0.55.2",
+    "react-native-carousel-view": "^0.5.1",
     "watchman": "^1.0.0"
   }
 }

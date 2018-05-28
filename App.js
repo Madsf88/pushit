@@ -8,7 +8,7 @@ export default class App extends React.Component {
   constructor(props) {
 		super(props);
 		this.state = {
-      displayOnboarding: true
+      displayOnboarding: true // Set to true to test onboading
     };
     this.toggleOnboarding = this.toggleOnboarding.bind(this);
   }
