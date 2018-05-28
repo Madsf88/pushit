@@ -1,17 +1,28 @@
 {
+  "name": "pushit",
+  "version": "0.1.0",
   "private": true,
+  "devDependencies": {
+    "react-native-scripts": "1.14.0",
+    "jest-expo": "~27.0.0",
+    "react-test-renderer": "16.3.1"
+  },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "format": "prettier --single-quote --trailing-comma=es5 --print-width=100 --write '{create-react-native-app,react-native-scripts}/{src,template}/**/*.js'",
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
     "test": "jest"
   },
-  "devDependencies": {
-    "jest": "^21.2.1",
-    "prettier": "^0.21.0"
-  },
   "jest": {
-    "testPathIgnorePatterns": [
-      "node_modules",
-      "template"
-    ]
+    "preset": "jest-expo"
+  },
+  "dependencies": {
+    "expo": "^27.0.1",
+    "homebrew": "^0.1.0",
+    "react": "16.3.1",
+    "react-native": "~0.55.2",
+    "watchman": "^1.0.0"
   }
 }
