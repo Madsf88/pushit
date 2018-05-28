@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Button, Slider } from 'react-native';
+import { View, StyleSheet, Text, Button, Slider, Image } from 'react-native';
 import Carousel from 'react-native-carousel-view';
 import Dimensions from 'Dimensions';
 
@@ -51,6 +51,7 @@ export default class Onboarding extends Component {
                     indicatorOffset={20}
                     >
                     <View style={styles.contentContainer}>
+                        <Image style={styles.welcomeIcon} source={require('../assets/strong.png')} />
                         <Text style={styles.heading}>Welcome</Text>
                         <Text style={styles.bodytext}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy.</Text>
                     </View>
@@ -106,6 +107,11 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#949494',
         textAlign: 'center',
+    },
+    welcomeIcon: {
+        width: 250,
+        height: 250,
+        marginBottom: 30,
     },
     keytext: {
         fontSize: 90,
