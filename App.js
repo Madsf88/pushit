@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Dashboard from './components/Dashboard';
 import Onboarding from './components/Onboarding';
+import plan from './data/training-plan.json';
 
 export default class App extends React.Component {
   constructor(props) {
