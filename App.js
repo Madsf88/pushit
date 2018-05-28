@@ -8,7 +8,8 @@ export default class App extends React.Component {
   constructor(props) {
 		super(props);
 		this.state = {
-      displayOnboarding: true // Set to true to test onboading
+      displayOnboarding: true, // Set to true to test onboading
+      difficultySetting: 0
     };
     this.toggleOnboarding = this.toggleOnboarding.bind(this);
   }
@@ -17,11 +18,17 @@ export default class App extends React.Component {
       displayOnboarding: !this.state.displayOnboarding
     });
   }
+  difficultySetting(val){    
+    this.setState({
+      difficultySetting: val
+    });    
+  }
   render() {
     return (
       <View style={styles.container}>
         <Dashboard />
-        {this.state.displayOnboarding && <Onboarding show={this.toggleOnboarding} /> }
+        <Text>Difficulty: {this.state.difficultySetting}</Text>
+        {this.state.displayOnboarding && <Onboarding show={this.toggleOnboarding} difficulty={val => this.difficultySetting(val)} /> }
       </View>
     );
   }
