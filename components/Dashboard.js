@@ -28,12 +28,23 @@ class Days extends Component {
 			<View>
 				<FlatList
 					data={this.props.data.days.reverse()}
-					renderItem={({item,index}) => 
-						<View style={[styles.day]}>	
-							<Text> </Text>
-							<Text>Day {this.props.data.days.length-index}</Text>
-							<Sets data={item}  />
+					renderItem={({item,index}) =>
+						<View>
+							{this.props.currentWeek && !index ?
+								<View style={[styles.day, styles.dayActive]}> 	
+									<Text> </Text> 
+									<Text>Day {this.props.data.days.length-index}</Text>
+									<Sets data={item}  />
+								</View>
+							:
+							<View style={styles.day}> 	
+								<Text> </Text>
+								<Text>Day {this.props.data.days.length-index}</Text>
+								<Sets data={item}  />
+							</View>
+							}
 						</View>
+						
 					}
 				/>
 			</View> 
@@ -52,7 +63,7 @@ class Plan extends Component {
 					<View>
 						<Text> </Text>
 						<Text>Week {this.props.data.length-index}</Text>
-						<Days data={item} />
+						<Days data={item} currentWeek={index===0} />
 					</View>
 				}
 			/>
@@ -66,7 +77,7 @@ export default class Dashboard extends Component {
 		super(props);
 		this.state = {
 			progressionWeek: 3,
-			progressionDay: 1,
+			progressionDay: 2,
 			renderedPlan: []
         };
 	}
@@ -110,6 +121,10 @@ const styles = StyleSheet.create({
 		width: Dimensions.get('window').width-40,
 		margin:20,
 		opacity: 0.5
+	},
+	dayActive: {
+		opacity: 1,
+		backgroundColor: 'green'
 	}
   });
   
